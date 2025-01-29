@@ -1,0 +1,232 @@
+/* Reset margin dan padding agar layout lebih konsisten */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Pastikan elemen html dan body memenuhi seluruh tinggi layar */
+  overflow: hidden; /* Menghindari scroll vertikal */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Atur layout secara vertikal */
+  justify-content: center; /* Posisikan elemen di tengah */
+}
+
+/* Halaman pertama */
+.page {
+  width: 100%;
+  height: 100vh; /* Full height */
+  background-image: url('./images/DSC05219.JPG');
+  background-size: cover; /* Pastikan gambar latar menutupi seluruh area */
+  background-position: center; /* Posisikan gambar di tengah */
+  background-repeat: no-repeat; /* Menghindari gambar diulang */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  flex-direction: column; /* Pastikan elemen pada halaman pertama diatur vertikal */
+  position: relative; /* Agar lapisan hitam berada di atas gambar */
+}
+
+.page::before {
+  content: ""; /* Membuat elemen kosong */
+  position: absolute; /* Posisi absolute di atas gambar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Lapisan hitam dengan transparansi */
+  z-index: 1; /* Letakkan lapisan hitam di atas gambar */
+}
+
+.page > * {
+  position: relative; /* Pastikan konten tetap berada di atas lapisan hitam */
+  z-index: 2;
+}
+
+/* Judul "The Wedding Of" */
+.wedding-title {
+  font-family: Arial, sans-serif; /* Ganti ke font Arial atau font lainnya */
+  font-size: 6vw;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white; /* Bisa diubah sesuai kebutuhan */
+}
+
+
+/* Nama Pengantin */
+.bride-groom {
+  font-family: 'Great Vibes', cursive;
+  font-size: 8vw;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Tanggal pernikahan */
+.wedding-date {
+  font-size: 3vw;
+  margin-bottom: 20px;
+}
+
+/* Teks "Kepada Yth, Bpk/Ibu/Saudara/i" */
+.invited-to {
+  font-size: 0.9vw;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Teks undangan */
+.invitation-text {
+  font-size: 1.4vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* Tombol "Buka Undangan" */
+button {
+  padding: 12px 24px; /* Mengurangi padding */
+  font-size: 1.5vw; /* Mengurangi ukuran font */
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #e55b4e;
+}
+
+/* Teks footer */
+.apology {
+  font-size: 1vw;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Media Queries untuk layar kecil (ponsel) */
+@media (max-width: 600px) {
+  .wedding-title {
+    font-size: 7vw;
+  }
+
+  .bride-groom {
+    font-size: 15vw;
+  }
+
+  .wedding-date, .invited-to, .invitation-text {
+    font-size: 5vw;
+  }
+
+  button {
+    font-size: 4vw;
+    padding: 12px 25px;
+    margin-bottom: 8px;
+  }
+
+  .apology {
+    font-size: 4vw;
+    margin-top: 5px;
+  }
+
+  .invited-to {
+    font-size: 4.3vw;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .invitation-text {
+    font-size: 4.3vw; /* Ukuran font lebih kecil untuk teks undangan di desktop */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+}
+
+/* Media Queries untuk layar antara 600px dan 1024px (tablet) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .wedding-title {
+    font-size: 8vw;
+  }
+
+  .bride-groom {
+    font-size: 10vw;
+  }
+
+  .wedding-date, .invited-to, .invitation-text {
+    font-size: 4.5vw;
+  }
+
+  button {
+    font-size: 3.5vw;
+    padding: 14px 28px;
+    margin-bottom: 30px;
+  }
+
+  .apology {
+    font-size: 4.5vw;
+    margin-top: 30px;
+  }
+
+  .invited-to {
+    font-size: 3.5vw;
+    margin-top: 13px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Media Queries untuk layar besar (desktop) */
+@media (min-width: 1025px) {
+  .wedding-title {
+    font-size: 1.7vw;
+  }
+
+  .bride-groom {
+    font-size: 6vw;
+  }
+
+  .wedding-date, .invited-to, .invitation-text {
+    font-size: 1.5vw;
+  }
+
+  button {
+    font-size: 1.5vw;
+    padding: 12px 24px;
+    margin-bottom: 8px;
+  }
+
+  .apology {
+    font-size: 1.2vw;
+    margin-top: 5px;
+    margin-bottom: 40px;
+  }
+
+  .invited-to {
+    font-size: 1.2vw;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  /* Mengubah ukuran font untuk teks undangan agar lebih kecil di desktop */
+  .invitation-text {
+    font-size: 1.4vw; /* Ukuran font lebih kecil untuk teks undangan di desktop */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+}

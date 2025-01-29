@@ -1,0 +1,217 @@
+/* Gaya untuk halaman pertama */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.section-1 {
+  position: relative;
+  background-image: url('../images/DSC05219.JPG');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 50px;
+  height: 80vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.section-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.section-1 h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-1 h2 {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #D87F5A;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'Great Vibes', cursive;
+  position: relative;
+  z-index: 2;
+}
+
+.save-the-date {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.date {
+  font-size: 1.8rem;
+  font-weight: normal;
+  position: relative;
+  z-index: 2;
+}
+
+/* Gaya untuk halaman kedua */
+.section-2 {
+  padding: 50px;
+  text-align: center;
+  background-color: #f5f5dc;  /* Krem */
+  font-family: 'Arial', sans-serif;
+}
+
+.undangan-text {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 auto;
+  max-width: 500px;  /* Batasi lebar teks agar tidak terlalu lebar */
+}
+
+.section-2 h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4F4F4F;
+  margin-bottom: 20px;
+}
+
+.section-2 h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4F4F4F;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.couple-frame {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.couple-frame p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.groom-frame, .bride-frame {
+  width: 45%;
+  max-width: 250px;
+  border: 3px solid #D87F5A; /* Kotak bingkai dengan border oranye */
+  border-radius: 10px; /* Sudut kotak sedikit melengkung */
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Bayangan lembut di sekitar kotak */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Menjaga foto dan teks tetap di tengah secara vertikal */
+  transition: all 0.3s ease-in-out; /* Animasi transisi untuk efek zoom-in */
+}
+
+.groom-frame .image-container, .bride-frame .image-container {
+  width: 150px; /* Ukuran lebar frame foto */
+  height: 150px; /* Ukuran tinggi frame foto */
+  overflow: hidden; /* Agar gambar yang keluar tidak terlihat */
+  border-radius: 50%; /* Membuat frame foto menjadi bulat */
+  margin-bottom: 15px;
+  background-color: #fff; /* Warna latar belakang */
+  display: flex;
+  justify-content: center; /* Menjaga gambar tetap di tengah secara horizontal */
+  align-items: center; /* Menjaga gambar tetap di tengah secara vertikal */
+  box-shadow: 0 4px 10px rgba(216, 127, 90, 0.5); /* Bayangan oranye di atas bingkai foto */
+}
+
+.groom-frame .image-container img, .bride-frame .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Menjaga rasio gambar, tanpa merusak */
+}
+
+.groom-frame p, .bride-frame p {
+  margin: 8px 0;
+}
+
+.groom-frame .name, .bride-frame .name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #D87F5A;
+}
+
+.groom-frame .status, .bride-frame .status {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.groom-frame .parents, .bride-frame .parents {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+/* Galeri Foto */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* 4 kolom */
+  margin-top: 30px;
+  gap: 0;  /* Menghapus jarak antar gambar */
+}
+
+.gallery-item {
+  margin: 0;  /* Hapus margin antar item */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0; /* Menghapus sudut melengkung */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan pada foto */
+}
+
+/* Responsif untuk perangkat ponsel */
+@media (max-width: 768px) {
+  .groom-frame, .bride-frame {
+    width: 100%;  /* Atur lebar bingkai pengantin untuk ponsel */
+    max-width: none;  /* Hapus batasan lebar max */
+  }
+
+  .groom-frame .image-container, .bride-frame .image-container {
+    width: 120px;  /* Menjaga ukuran foto tetap proporsional */
+    height: 120px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di ponsel */
+  }
+}
+
+/* Responsif untuk perangkat ponsel kecil */
+@media (max-width: 480px) {
+  .groom-frame, .bride-frame {
+    width: 100%;  /* Pastikan bingkai pengantin lebar penuh di ponsel kecil */
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;  /* 1 kolom di ponsel kecil */
+  }
+}

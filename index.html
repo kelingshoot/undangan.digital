@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Halaman pertama dengan background -->
+    <div class="page" id="page1">
+      <div class="content">
+        <h1 class="wedding-title">The Wedding Of</h1> <!-- Judul "The Wedding Of" -->
+        <p class="bride-groom">Andy & Zhea</p> <!-- Nama pengantin -->
+        <p class="wedding-date">Friday, 12 Desember 2025</p> <!-- Tanggal -->
+        <p class="invited-to">Kpd Bpk/Ibu/Saudara/i</p> <!-- Nama Tamu -->
+        <p class="invitation-text">Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir di acara pernikahan kami.</p>
+        <button id="openInvitationBtn">Buka Undangan</button>
+        <p class="apology">Mohon maaf apabila ada kesalahan penulisan nama, gelar, dan alamat.</p> <!-- Permintaan maaf -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Menambahkan event listener ke tombol "Buka Undangan"
+    document.getElementById("openInvitationBtn").addEventListener("click", function() {
+      // Arahkan ke halaman kedua di dalam folder 'kedua'
+      window.location.href = "./kedua/kedua.html"; // Ganti dengan nama file yang sesuai di folder kedua
+    });
+  </script>
+
+</body>
+</html>
